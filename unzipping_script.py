@@ -1,11 +1,17 @@
 """
-This script 
+This script unzips files from 
+all the Directories that include
+necessary ZIP files
+
+Or you could cd into each directory
+Run: unzip \*.ZIP
+
 """
 
 
 import os
 
-directory = "/Users/Salar_Hajimirsadeghi/Google Drive/Projects/Patents/Data"
+directory = "Data"
 
 
 for folder in os.listdir(directory):	
@@ -24,9 +30,11 @@ for folder in os.listdir(directory):
 
 					# Directory: ".../Data/l20170131/I20170131/UTIL____"
 					if(folder3.startswith('UTIL')):
-						last_directory = directory3 + "/" + folder3						
-						for f in os.listdir(last_directory):
-							os.system('unzip "*.zip"')
+						last_directory = directory3 + "/" + folder3																								
+						cd_command = "cd " + last_directory
+						print("cd_command: ", cd_command)
+						os.system(cd_command)
+							
 
 
 
